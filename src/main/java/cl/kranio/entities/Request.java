@@ -2,33 +2,17 @@ package cl.kranio.entities;
 
 import java.io.Serializable;
 
-public class Game implements Serializable{
+public class Request implements Serializable{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1638162779099427308L;
+	private static final long serialVersionUID = -4757743097324473592L;
 	
-	public Game() {}
-	
-	public Game(int id, String name, String category, int year) {
-		this.id = id;
-		this.name = name;
-		this.category = category;
-		this.year = year;
-	}
-	
-	private int id;
 	private String name;
 	private String category;
 	private int year;
 	
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
+	public Request() {}
 
 	public String getName() {
 		return name;
@@ -54,4 +38,8 @@ public class Game implements Serializable{
 		this.year = year;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 }

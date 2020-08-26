@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cl.kranio.dao.GameDataAccess;
 import cl.kranio.entities.Game;
+import cl.kranio.model.GameDataAccess;
 
 @Service
 public class GameService {
@@ -30,6 +30,9 @@ public class GameService {
 			}
 		}
 		return gameList;
-		
+	}
+	
+	public Game getGame(String name) {
+		return gameDA.getGame(name);
 	}
 }

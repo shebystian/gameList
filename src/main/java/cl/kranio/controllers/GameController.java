@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import cl.kranio.entities.Game;
+import cl.kranio.entities.Request;
 import cl.kranio.services.GameService;
 
 @RestController
@@ -25,8 +26,13 @@ public class GameController {
 	}
 	
 	@RequestMapping(value = "/game", method = RequestMethod.POST)
-	public List<Game> getGame4Category(@Valid @RequestBody String category){
-		return serviceGame.getListForCategory(category);
+	public List<Game> getGame4Category(@Valid @RequestBody Request game){
+		return serviceGame.getListForCategory(game.getCategory());
 		
+	}
+	
+	@RequestMapping(value = "/game", method = RequestMethod.POST)
+	public Game getGame(@Valid @RequestBody Request game){
+		return serviceGame.getGame(game.getName());
 	}
 }
