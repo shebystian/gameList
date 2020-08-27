@@ -11,13 +11,13 @@ public class Wrapper implements Serializable {
 	
 	private boolean OK;
 	private Object data;
-	private Error error;
+	private boolean error;
 	private String information;
 	public Wrapper() {
 		super();
 	}
 
-	public Wrapper(boolean oK, Object data, Error error, String information) {
+	public Wrapper(boolean oK, Object data, boolean error, String information) {
 		super();
 		OK = oK;
 		this.data = data;
@@ -41,11 +41,11 @@ public class Wrapper implements Serializable {
 		this.data = data;
 	}
 
-	public Error getError() {
+	public boolean getError() {
 		return error;
 	}
 
-	public void setError(Error error) {
+	public void setError(boolean error) {
 		this.error = error;
 	}
 

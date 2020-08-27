@@ -18,6 +18,7 @@ public class GameDataAccess {
 		Game game1 = new Game();
 		Game game2 = new Game();
 		Game game3 = new Game();
+		Game game4 = new Game();
 		
 		game.setId(110);
 		game.setName("Mortal Kombat XL");
@@ -43,6 +44,12 @@ public class GameDataAccess {
 		game3.setYear(2016);
 		gameList.add(game3);
 		
+		game4.setId(114);
+		game4.setName("Doom Eternal");
+		game4.setCategory("Shooter");
+		game4.setYear(2020);
+		gameList.add(game4);
+		
 		return gameList;
 	}
 
@@ -54,7 +61,7 @@ public class GameDataAccess {
 			game.setCategory("Fight");
 			game.setYear(2019);
 		}
-		else if(name.equals("Street Fighter V")) {
+		else if(name.equals("Street Fighter V") || name.equals("Street Fighter")) {
 			game.setId(111);
 			game.setName("Street Fighter V");
 			game.setCategory("Fight");
@@ -71,6 +78,12 @@ public class GameDataAccess {
 			game.setName("God of War");
 			game.setCategory("Adventures");
 			game.setYear(2016);
+		}
+		else if(name.equals("Doom") || name.equals("Doom Eternal")) {
+			game.setId(114);
+			game.setName("Doom Eternal");
+			game.setCategory("Shooter");
+			game.setYear(2020);
 		}
 		
 		return game;
@@ -109,6 +122,14 @@ public class GameDataAccess {
 			game.setName("God of War");
 			game.setCategory("Adventures");
 			game.setYear(2016);
+			listGame.add(game);
+		}
+		if(category.equals("Shooter")) {
+			game = new Game();
+			game.setId(114);
+			game.setName("Doom Eternal");
+			game.setCategory("Shooter");
+			game.setYear(2020);
 			listGame.add(game);
 		}
 		
