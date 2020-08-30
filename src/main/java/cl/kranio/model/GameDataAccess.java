@@ -85,6 +85,8 @@ public class GameDataAccess {
 			game.setCategory("Shooter");
 			game.setYear(2020);
 		}
+		else
+			return null;
 		
 		return game;
 	}
