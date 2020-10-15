@@ -23,7 +23,7 @@ public class GameController {
 	@Autowired
 	GameService serviceGame;
 
-	@RequestMapping(value = "/game", method = RequestMethod.GET)
+	@RequestMapping(value = "/games", method = RequestMethod.GET)
 	public ResponseEntity<Wrapper> getGameList() {
 		Wrapper wp = new Wrapper();
 		try {
@@ -45,7 +45,7 @@ public class GameController {
 		}
 	}
 
-	@RequestMapping(value = "/game", method = RequestMethod.POST)
+	@RequestMapping(value = "/game", method = RequestMethod.GET)
 	public ResponseEntity<Wrapper> getGame(@RequestBody Request gameRequest) {
 		Wrapper wp = new Wrapper();
 		try {
@@ -67,7 +67,7 @@ public class GameController {
 		}
 	}
 	
-	@RequestMapping(value = "/game/category", method = RequestMethod.POST)
+	@RequestMapping(value = "/game/category", method = RequestMethod.GET)
 	public ResponseEntity<Wrapper> getGame4Category(@RequestBody Request game) {
 		Wrapper wp = new Wrapper();
 		try {
