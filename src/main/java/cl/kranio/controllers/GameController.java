@@ -68,11 +68,11 @@ public class GameController {
 		}
 	}
 	
-	@RequestMapping(value = "/game/category", method = RequestMethod.GET)
-	public ResponseEntity<Wrapper> getGame4Category(@RequestBody Request game) {
+	@RequestMapping(value = "/game/category/{category}", method = RequestMethod.GET)
+	public ResponseEntity<Wrapper> getGame4Category(@PathVariable("category") String categoryGame) {
 		Wrapper wp = new Wrapper();
 		try {
-			List<Game>listGame = serviceGame.getListForCategory(game.getCategory());
+			List<Game>listGame = serviceGame.getListForCategory(categoryGame);
 			wp.setData(listGame);
 			wp.setOK(true);
 			wp.setInformation("Consulta realizada correctamente");
