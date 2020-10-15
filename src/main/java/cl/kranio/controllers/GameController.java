@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -45,11 +46,11 @@ public class GameController {
 		}
 	}
 
-	@RequestMapping(value = "/game", method = RequestMethod.GET)
-	public ResponseEntity<Wrapper> getGame(@RequestBody Request gameRequest) {
+	@RequestMapping(value = "/game/{name}", method = RequestMethod.GET)
+	public ResponseEntity<Wrapper> getGame(@PathVariable("name") String nameRequest) {
 		Wrapper wp = new Wrapper();
 		try {
-			Game game = serviceGame.getGame(gameRequest.getName());
+			Game game = serviceGame.getGame(nameRequest);
 			wp.setData(game);
 			wp.setOK(true);
 			wp.setInformation("Consulta realizada correctamente");
