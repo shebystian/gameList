@@ -52,6 +52,11 @@ public class GameDataAccess {
 		
 		return gameList;
 	}
+	
+	public List<Game> getGamesF(){
+		List<Game> gameList = new ArrayList();
+		return gameList;
+	}
 
 	public Game getGame(String name) {
 		Game game = new Game();

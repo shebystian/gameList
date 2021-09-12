@@ -17,24 +17,32 @@ public class GameService {
 
 	public List<Game> getList() {
 		try {
-			return gameDA.getGames();
-		} 
+			List<Game> games = new ArrayList<Game>();
+			games = gameDA.getGamesF();
+			if(games != null)
+				return null;
+
+			return games;
+		}
 		catch (Exception ex) {
 			throw ex;
 		}
 	}
 
 	public List<Game> getListForCategory(String categoryGame) {
-
 		List<Game> gameList = new ArrayList();
 		List<Game> gameListFilter = new ArrayList();
 
 		try {
 			gameList = gameDA.getGames();
+			if(gameList!=null)
+				return null;
+			
 			for (Game obj : gameList) {
 				if (obj.getCategory().equals(categoryGame))
 					gameListFilter.add(obj);
 			}
+			
 		} catch (Exception ex) {
 			throw ex;
 		}
