@@ -18,10 +18,7 @@ public class GameService {
 	public List<Game> getList() {
 		try {
 			List<Game> games = new ArrayList<Game>();
-			games = gameDA.getGamesF();
-			if(games != null)
-				return null;
-
+			games = gameDA.getGames();
 			return games;
 		}
 		catch (Exception ex) {
@@ -35,8 +32,6 @@ public class GameService {
 
 		try {
 			gameList = gameDA.getGames();
-			if(gameList!=null)
-				return null;
 			
 			for (Game obj : gameList) {
 				if (obj.getCategory().equals(categoryGame))
