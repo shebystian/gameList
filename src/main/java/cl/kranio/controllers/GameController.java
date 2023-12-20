@@ -83,12 +83,12 @@ public class GameController {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
 		}
 	}
-	
-	@RequestMapping(value = "/game/category", method = RequestMethod.GET)
-	public ResponseEntity<Wrapper> getGame4Category(@RequestBody Request game) {
+
+	@RequestMapping(value = "/game/category/{category}", method = RequestMethod.GET)
+	public ResponseEntity<Wrapper> getGame4Category(@PathVariable("category") String categoryGame) {
 		Wrapper response = new Wrapper();
 		try {
-			List<Game>listGame = serviceGame.getListForCategory(game.getCategory());
+			List<Game>listGame = serviceGame.getListForCategory(categoryGame);
 			response.setData(listGame);
 			response.setOK(true);
 			response.setInformation("Consulta realizada correctamente");
