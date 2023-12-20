@@ -1,18 +1,34 @@
-package cl.kranio.entities;
+package cl.kranio.dao.entities;
 
 import java.io.Serializable;
 
-public class Request implements Serializable{
+public class Game implements Serializable{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -4757743097324473592L;
+	private static final long serialVersionUID = 1638162779099427308L;
 	
+	public Game() {}
+	
+	public Game(int id, String name, String category, int year) {
+		this.id = id;
+		this.name = name;
+		this.category = category;
+		this.year = year;
+	}
+	
+	private int id;
 	private String name;
 	private String category;
 	private int year;
 	
-	public Request() {}
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getName() {
 		return name;
@@ -38,8 +54,4 @@ public class Request implements Serializable{
 		this.year = year;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	
 }

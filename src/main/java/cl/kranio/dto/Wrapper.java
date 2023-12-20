@@ -1,4 +1,4 @@
-package cl.kranio.entities;
+package cl.kranio.dto;
 
 import java.io.Serializable;
 
