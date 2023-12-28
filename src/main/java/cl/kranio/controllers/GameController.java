@@ -57,7 +57,7 @@ public class GameController {
 		}
 	}
 
-	@RequestMapping(value = "/game/{name}", method = RequestMethod.GET)
+	@RequestMapping(value = "/v1/game/{name}", method = RequestMethod.GET)
 	public ResponseEntity<Wrapper> getGame(@PathVariable("name") String nameRequest) {
 		Wrapper response = new Wrapper();
 		try {
@@ -79,7 +79,7 @@ public class GameController {
 		}
 	}
 
-	@RequestMapping(value = "/game/category/{category}", method = RequestMethod.GET)
+	@RequestMapping(value = "/v1/game/category/{category}", method = RequestMethod.GET)
 	public ResponseEntity<Wrapper> getGame4Category(@PathVariable("category") String categoryGame) {
 		Wrapper response = new Wrapper();
 		try {
