@@ -1,4 +1,4 @@
-package cl.kranio.dto;
+package cl.kranio.viewmodel;
 
 import java.io.Serializable;
 
